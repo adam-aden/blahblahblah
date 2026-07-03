@@ -1,0 +1,46 @@
+import sys
+import time
+
+print("wellcome to bar")
+
+while True:
+    name = input("enter your name")
+    if name.strip():
+        print(f"hello {name}")
+        break
+    else:
+        print("enter again")
+
+while True:
+    age = input("enter your age")
+    if age.isdigit():
+        print(f"okay your {age}")
+        break
+    else:
+        print("please enter again")
+print()
+
+age = int(age)
+
+if age <= 18:
+    print("no you are too young")
+    sys.exit()
+else:
+    print("u can come")
+
+print("well... what u want to drink?")
+
+drink = ["coke", "beer", "coffee"]
+
+print(f"i have...{drink}")
+
+while True:
+    answer = input("enter drink that u want")
+    if answer in drink:
+        print(f"okay one {answer} coming up...")
+        break
+    else:
+        print(f"sorry we don't have that {answer}")
+
+time.sleep(2)
+print(f"here one {answer}")
