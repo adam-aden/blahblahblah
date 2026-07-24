@@ -1,0 +1,67 @@
+print("welcome to bml calculator")
+print("type stop to out the program")
+
+def get_category (bml):
+        if bml < 18.5:
+            category = "skinny"
+        elif bml <= 22.9:
+            category = "normal"
+        elif bml <= 24.9:
+            category = "fat"
+        else:
+            category = "too fat"
+        return category
+
+
+n = int(input("enter how many"))
+
+data = {}
+
+for i in range(n):
+    name = input("enter name")
+    weight = float(input("enter weight"))
+    height = float(input("enter height"))
+
+    bml =  round( weight / (height / 100) **2, 2)
+
+    data[name] = weight, height, bml
+
+    category = get_category(bml)
+
+    print(f"{name} bml = {bml:.2f} is {category}")
+
+for search, total in data.items():
+    print(f"{search} is {total}")
+
+while True:
+
+    search_name = input("enter who u want 2 watch")
+
+    if search_name == "stop":
+        break
+    else:
+
+        weight, height, bml = data[search_name]
+
+        category = get_category(bml)
+
+        print(f"{search_name} bml = {bml:.2f} is {category}")
+
+    print(f"{name} bml = {bml:.2f} is {category}")
+
+for search, total in data.items():
+    print(f"{search} is {total}")
+
+while True:
+
+    search_name = input("enter who u want 2 watch")
+
+    if search_name == "stop":
+        break
+    else:
+
+        weight, height, bml = data[search_name]
+
+        category = get_category(bml)
+
+        print(f"{search_name} bml = {bml:.2f} is {category}")
